@@ -1,11 +1,26 @@
 package com.vcs.banksystem.model;
 
-public class Customer{
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+import org.hibernate.annotations.DynamicUpdate;
+
+@DynamicUpdate
+@Entity
+public class Customer {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String name;
 	private int age;
 
+	public Customer() {
+		// Default
+	}
+	
 	public Customer(int id, String name, int age) {
 		this.id = id;
 		this.name = name;
