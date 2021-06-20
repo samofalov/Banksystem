@@ -21,7 +21,7 @@ public class CustomerService {
 	
 	public List<Customer> getAllCustomers(){
 		
-		List<Customer> allCustomers = repository.getAllCustomers();	
+		List<Customer> allCustomers = (List<Customer>) repository.findAll();	
 		
 		return allCustomers;
 	}
