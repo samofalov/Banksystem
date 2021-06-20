@@ -25,5 +25,14 @@ public class CustomerService {
 		
 		return allCustomers;
 	}
+
+	public Customer addCustomer(Customer customer) {
+		
+		
+		
+		Customer savedCustomer = new Customer(50, "A", 50);// repository.save(customer);
+		
+		return savedCustomer;
+	}
 	
 }
