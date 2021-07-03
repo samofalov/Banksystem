@@ -27,11 +27,30 @@ public class CustomerController {
 	}
 	
 	@RequestMapping("/viewList")
-	public String viewAllCustomers() {
+	public String viewAllCustomers(Model model) {
 		
 		List<Customer> customers = service.getAllCustomers();
-		// TODO: use list
-
+		
+		model.addAttribute("customerList", customers);
+		
 		return "ViewAllCustomers";
 	}
+	
+	@GetMapping("/addCustomer")
+	public String loadCustomerPage(Model model) {
+		
+		Customer newCustomer = new Customer();
+		model.addAttribute("customer", newCustomer);
+		
+		return "AddNewCustomer";
+	}
+	
+	@PostMapping("/addCustomer")
+	public String addNewCustomer() {
+		// TODO: ...
+		
+		return "AddNewCustomer";
+	}
+	
+	
 }
