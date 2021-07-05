@@ -15,8 +15,10 @@
 			<form:label path="name"> Name: </form:label>
 			<form:input path="name"/>
 			
-			<input type="submit" value="submit"/>
+			<form:label path="age"> Age: </form:label>
+			<form:input path="age"/>
 			
+			<input type="submit" value="submit"/>
 		</form:form>
 	</body>
 </html>

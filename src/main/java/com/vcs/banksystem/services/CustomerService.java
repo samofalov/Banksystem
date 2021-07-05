@@ -26,4 +26,12 @@ public class CustomerService {
 		return allCustomers;
 	}
 	
+	public Customer addNewCustomer(Customer customer) {
+		
+		// TODO: check for SQL exceptions
+		Customer savedCustomerInstance = repository.save(customer);
+		
+		return savedCustomerInstance;
+	}
+	
 }

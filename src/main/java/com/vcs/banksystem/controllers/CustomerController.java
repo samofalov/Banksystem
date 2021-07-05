@@ -46,8 +46,9 @@ public class CustomerController {
 	}
 	
 	@PostMapping("/addCustomer")
-	public String addNewCustomer() {
-		// TODO: ...
+	public String addNewCustomer(@ModelAttribute("customer") Customer customer) {
+		
+		service.addNewCustomer(customer);
 		
 		return "AddNewCustomer";
 	}
