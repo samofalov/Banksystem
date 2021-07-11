@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.validator.constraints.Range;
+
 @Entity
 public class Customer {
 
@@ -15,6 +17,8 @@ public class Customer {
 	
 	@NotEmpty(message = "The name should not be empty")
 	private String name;
+	
+	@Range(min = 1)
 	private int age;
 	
 	public Customer() {

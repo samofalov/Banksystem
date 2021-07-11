@@ -6,16 +6,16 @@
 
 <!DOCTYPE html>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 	<head>
-		
 		<style>
 			table, th, td {
 			  border: 1px solid black;
 			}
 			
 			table {
-				width: 100%;
+				width: 25%;
 			}
 		</style>
 		
@@ -38,5 +38,9 @@
 				</tr>
 			</c:forEach>
 		</table>
+		
+		<form:form method="get" action="/addCustomer">
+			<input type="submit" value="Add new customer"/>
+		</form:form>
 	</body>
 </html>

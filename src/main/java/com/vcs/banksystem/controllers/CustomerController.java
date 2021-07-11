@@ -46,11 +46,13 @@ public class CustomerController {
 	}
 	
 	@PostMapping("/addCustomer")
-	public String addNewCustomer(@ModelAttribute("customer") Customer customer) {
+	public RedirectView addNewCustomer(@ModelAttribute("customer") Customer customer) {
 		
 		service.addNewCustomer(customer);
 		
-		return "AddNewCustomer";
+		RedirectView redirectView = new RedirectView("/viewList", true);
+		
+		return redirectView;
 	}
 	
 	
